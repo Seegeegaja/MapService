@@ -6,8 +6,10 @@
 </head>
 <body>
 <h1>CCCCCCCCCRRREEEEEAAAATTTTEEEE</h1>
-<form th:action="@{/members/new}" method="post">
+<form th:action="@{/members/update}" method="post">
+    <input type="hidden" th:field="${member.id}">
     <div>
+
         <label for="name">이름</label>
         <input type="text" id="name" th:field="${member.name}" name="name" placeholder="이름을 입력하세요">
     </div>

@@ -45,12 +45,16 @@ class MapMemberRepositoryTest {
         memberDto.setName("안유진");
         memberDto.setAddress("제주도");
         repository.save(memberDto);
+        MemberDto kar = new MemberDto();
+        kar.setName("카리나");
+        kar.setAddress("제주");
+        repository.save(kar);
         //When
-        Long id = 1L;
+        Long id = 2L;
         MemberDto findMember = repository.findById(id).get();
 
         //Then
-        assertThat(findMember.getName()).isEqualTo("안유진");
+        assertThat(findMember.getName()).isEqualTo("카리나");
 
     }
     @Test

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <script src="/static/jquery/jquery.js"></script>
+    <script src="/static/js/login.js"></script>
+    <title>Title</title>
+</head>
+<body>
+<h1>로그인 창입니다</h1>
+<form th:action="@{/users/admin}">
+    <div>
+        <label for="userId"></label>
+        <input type="text" id="userId" th:field="${user.userId}" name="userId" placeholder="아이디">
+    </div>
+    <div>
+        <label for="password"></label>
+        <input type="text" id="password" th:field="${user.password}" name="password" placeholder="비번">
+    </div>
+    <button type="submit">로그인</button>
+</form>
+</body>
+</html>

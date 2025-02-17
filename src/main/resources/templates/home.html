@@ -6,10 +6,25 @@
 </head>
 <body>
 <h1>회원관리 APP</h1>
-<p>회원기능</p>
+<p>메뉴</p>
+<div th:unless="${session.sessionInfo} == null">
+    [[${session.sessionInfo.nickName}]]님 방문을 환영 합니다.
+</div>
 <p>
-  <a th:href="@{/members/new}">회원정보입력</a>
-  <a th:href="@{/members}">회원목록보기</a>
+    <th:block th:if="${session.sessionInfo} == null">
+        <a th:href="@{/users/signUp}">회원가입</a><br>
+        <a th:href="@{/users/login}">로그인</a><br>
+    </th:block>
+    <th:block th:if="${session.sessionInfo} != null">
+        <a th:href="@{/logout}">로그아웃</a><br>
+        <a th:href="@{/users/admin}">사용자리스트</a><br>
+        <a th:href="@{/members/new}">고객정보입력</a><br>
+        <a th:href="@{/members}">고객목록보기</a><br>
+        <br>
+
+    </th:block>
+    <br>
+    <a th:href="@{/users/myPage}">인터셉터(AOP) 테스트</a>
 </p>
 </body>
 </html>

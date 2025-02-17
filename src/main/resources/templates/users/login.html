@@ -8,7 +8,7 @@
 </head>
 <body>
 <h1>로그인 창입니다</h1>
-<form th:action="@{/users/admin}">
+<form th:action="@{/login}" method="post">
     <div>
         <label for="userId"></label>
         <input type="text" id="userId" th:field="${user.userId}" name="userId" placeholder="아이디">

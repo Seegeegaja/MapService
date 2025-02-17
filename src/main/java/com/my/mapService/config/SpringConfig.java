@@ -18,4 +18,5 @@ public class SpringConfig {
     public UserRepository userRepository() {
         return new ListUserRepository();
     }
+
 }
